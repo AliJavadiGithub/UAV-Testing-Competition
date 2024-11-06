@@ -1,0 +1,29 @@
+At first, I read the last year's participants reports who finished first and second in the competition to get an idea of how to approach the task
+
+Secondly, as I thought the winners method needs more computing resources to be executed, I chose the runners up approach as a baseline to start the implementation.
+
+Therefore, at the first step, I modified the parameters of their approach to be able to run it in accordance with this year's competition specifications. 
+
+After I went through their implementation, I enjoyed their approach to the task, so I decided to use reinforcement learning algorithms for this taks.
+
+In order to use a different method which I believe has more exploration capacity, I chose Q-learning algorithm, and implemented a base version of this algorithm with a reward function which was somehow similar to the runners-up reward function. The reward function just would give 100 positive points when the minimum distance of quadcopter to any one of obstacles was between 0 and 1.5 meter, otherwise it would penalize equal to the minimum distance of quadcopter to any abstacles.
+"""reward = 100 if 0 <= abs(min_distance) <= 1.5 else -min_distance  # Reward for failure or deviation """
+
+Then, since the results of the 'qlv0' were not satisfactory, I modified its reward function to score based on the minimum distance of the drone to the obstacles (min_dist) during the flight, exactly the same function that is written in the 'Evaluation' section of readme of the competition's github. (resulting code 'qlv1')
+
+Next, I modified the exploration strategy from epsilon-greedy approach to UCB to enable the algorithm to explore less visited states. Also, I modified the reward function to prioritize environment configurations with fewer number of obstacles. Moreover, I added the capability of preventing the algorithm to choose overlapped obstacles. (resulting code 'qlv2')
+
+After that, as I had encountered the issue that drone could pass through obstacles, I modified the implementation to resolve this issue (the issue was with respect to handling manipulating the attributes of Obstacle objects in code). (resulting code 'qlv3')
+
+Afterwards, I just modified the code to be aligned with object-oriented and software design principles. (resulting code 'qlv4')
+
+Subsequently, I added a function which calculates fitness function which was used in Surrealist paper to be able to investigate the learning of algorithm over time. (resulting code 'qlv5')
+
+Finally, I modified the code to include the fitness function in reward calculation, and at the same time I changed actions, which can be taken by Q-learning algorithm, to make the algorithm take more step-wise steps in the environment and prevent it from taking random steps in the state space all the time. (resulting code 'qlv6')
+
+
+
+
+
+
+
