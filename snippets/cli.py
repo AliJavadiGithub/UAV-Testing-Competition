@@ -7,17 +7,7 @@ import shutil
 import sys
 from decouple import config
 
-""" Uncomment any one of the following imports and comment others to use a specific test generator
-    Also, uncomment the function call of test generator
-"""
-# from mcts import MCTS
-# from qlv0 import QLearningTestGenerator
-# from qlv1 import QLearningGenerator
-# from qlv2 import UCBGenerator
-# from qlv3 import UCBGenerator
-# from qlv4 import UCBGenerator
 from qlv5 import UCBGenerator
-# from qlv6 import UCBGenerator
 
 TESTS_FOLDER = config("TESTS_FOLDER", default="./generated_tests/")
 logger = logging.getLogger(__name__)
@@ -70,14 +60,7 @@ if __name__ == "__main__":
     try:
         args = arg_parse()
 
-        """ 
-            Uncomment the function call of chosen test generator
-        """
-        # generator = MCTS(case_study_file=args.test)
-        # generator = QLearningTestGenerator(case_study_file=args.test)
-        # generator = QLearningGenerator(case_study_file=args.test)
-        generator = UCBGenerator(case_study_file=args.test)
-        
+        generator = UCBGenerator(case_study_file=args.test)        
         test_cases = generator.generate(args.budget)
 
         ### copying the test cases to the output folder
