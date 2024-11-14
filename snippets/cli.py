@@ -7,7 +7,7 @@ import shutil
 import sys
 from decouple import config
 
-from qlv5 import UCBGenerator
+from qlucb import UCBGenerator
 
 TESTS_FOLDER = config("TESTS_FOLDER", default="./generated_tests/")
 logger = logging.getLogger(__name__)
