@@ -1,7 +1,7 @@
 # TGen-UQ at ICST/SBFT 2025 Tool Competition - CPS-UAV Test Case Generation Track
 
 ## Overview
-This repository contains the implementation of our tool **TGen-UQ** (**T**est Case **Gen**eration for Autonomous UAV Navigation using **Q**-learning and **U**CB) for the [UAV Testing Competition](https://github.com/skhatiri/UAV-Testing-Competition). QLUCB utilizes the Q-learning algorithm to generate challenging test cases by placing obstacles along the trajectories of Unmanned Aerial Vehicles (UAVs) to test and evaluate their navigational resilience. A detailed description of the algorithm is available in our [report](reports/Task-Report.pdf).
+This repository contains the implementation of our tool **TGen-UQ** (**T**est Case **Gen**eration for Autonomous UAV Navigation using **Q**-learning and **U**CB) for the [UAV Testing Competition](https://github.com/skhatiri/UAV-Testing-Competition). TGen-UQ utilizes the Q-learning algorithm to generate challenging test cases by placing obstacles along the trajectories of Unmanned Aerial Vehicles (UAVs) to test and evaluate their navigational resilience. A detailed description of the algorithm is available in our [report](reports/Task-Report.pdf).
 
 ## Getting Started
 
